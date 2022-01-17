@@ -1,41 +1,28 @@
 package com.learn;
 
 public class MPS {
-	private double exceedsSpendingLimit;
-	private double spending;
-	private String constituency;
-	private String driver;
-	public MPS(double spending, String constituency, String driver)
+	protected double exceedsSpendingLimit;
+	protected double spending;
+	protected Constituency constituency;
+	protected Driver driver;
+	public MPS(double spending, Constituency constituency, Driver driver)
 	{
 		exceedsSpendingLimit=100000;
 		this.spending=spending;
 		this.constituency=constituency;
 		this.driver=driver;
 	}
-	public String getConstituency()
+	public Constituency getConstituency()
 	{
 		return constituency;
 	}
-	public String getDriver()
+	public Driver getDriver()
 	{
 		return driver;
 	}
 	public boolean exceedsSpendingLimit()
 	{
-		if(spending > exceedsSpendingLimit)
-		{
-			return true;
-		}
-		return false;
-	}
-	public void mpsCanBeArrested()
-	{
-		if(spending > exceedsSpendingLimit)
-		{
-			System.out.println("MPS can be arrested.");
-		}else {
-			System.out.println("MPS cannot be arrested.");
-		}
+		return (spending > exceedsSpendingLimit) ? true : false;
 	}
 	public void drivingCar()
 	{

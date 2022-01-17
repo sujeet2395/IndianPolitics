@@ -1,46 +1,22 @@
 package com.learn;
 
-public class Ministers {
-	private double exceedsSpendingLimit;
-	private double spending;
+public class Ministers extends MPS{
+	
 	private boolean isPermission;
-	private String constituency;
-	private String driver;
-	public Ministers(double spending, boolean isPermission, String constituency, String driver)
+	
+	public Ministers(double spending, boolean isPermission, Constituency constituency, Driver driver)
 	{
-		exceedsSpendingLimit=1000000;
-		this.spending=spending;
+		super(spending, constituency, driver);
 		this.isPermission=isPermission;
-		this.constituency=constituency;
-		this.driver=driver;
+		this.exceedsSpendingLimit=1000000;
 	}
-	public String getConstituency()
-	{
-		return constituency;
+
+	public boolean isPermission() {
+		return isPermission;
 	}
-	public String getDriver()
-	{
-		return driver;
+
+	public void setPermission(boolean isPermission) {
+		this.isPermission = isPermission;
 	}
-	public boolean exceedsSpendingLimit()
-	{
-		if(spending > exceedsSpendingLimit)
-		{
-			return true;
-		}
-		return false;
-	}
-	public void ministerCanBeArrested()
-	{
-		if(spending > exceedsSpendingLimit || isPermission)
-		{
-			System.out.println("Minister can be arrested.");
-		}else {
-			System.out.println("Minister cannot be arrested.");
-		}
-	}
-	public void drivingCar()
-	{
-		System.out.println("driving Car.");
-	}
+	
 }
